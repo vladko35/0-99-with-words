@@ -1,0 +1,64 @@
+//Въвеждане на число от 0 до 99 и извеждането му с букви
+#include <iostream>
+using namespace std;
+int main ()
+{
+	system ("chcp 1251");
+	unsigned number = 0, e = 0, d = 0;
+	cout<<"Input a number: ";
+	cin>>number;
+	e = number % 10;
+	d = number / 10;
+	//
+	switch (number < 20? e : d)
+	{
+	case 0:
+		{
+			if (d && number < 20)
+				cout<<"Десет\n";
+			else
+				cout<<"Нула\n";
+		}; break;
+	case 1:
+		{
+			if (d && number < 20)
+				cout<<"Еди";
+			else
+				cout<<"Едно\n";
+		}; break;
+	case 2:
+		{
+			if (!d)
+				cout<<"Две\n";
+			else
+				cout<<"Два"; break;
+		}
+	case 3: cout<<"Три"; break;
+	case 4: cout<<"Четири"; break;
+	case 5:	cout<<"Пет"; break;
+	case 6: cout<<"Шест"; break;
+	case 7: cout<<"Седем"; break;
+	case 8: cout<<"Осем"; break;
+	case 9: cout<<"Девет"; break;
+	}
+	if (d && number < 20 && e != 0)
+		cout<<"надесет\n";
+	if (number >= 20 && number % 10 == 0)
+		cout<<"десет\n";
+	else
+		if (number > 20)
+			switch (e)
+			{
+			case 1: cout<<"десет и едно\n"; break;
+			case 2: cout<<"десет и две\n"; break;
+			case 3: cout<<"десет и три\n"; break;
+			case 4: cout<<"десет и четири\n"; break;
+			case 5:	cout<<"десет и пет\n"; break;
+			case 6: cout<<"десет и шест\n"; break;
+			case 7: cout<<"десет и седем\n"; break;
+			case 8: cout<<"десет и осем\n"; break;
+			case 9: cout<<"десет и девет\n"; break;
+			}
+	cout<<"\n";
+	return 0;
+}
